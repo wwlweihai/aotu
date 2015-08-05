@@ -1,14 +1,13 @@
 <div class="index-view">
     <div class="bg-img">
         <img src="images/bg.jpg" alt=""/>
-        <div class="wy">
-            <img src="images/wy.png" alt=""/>
-        </div>
+        <!--<div class="wy">-->
+            <!--<img src="images/wy.png" alt=""/>-->
+        <!--</div>-->
     </div>
-    <div class="logo-area">
-        <img src="images/cdz.png" alt=""/>
-    </div>
-
+    <!--<div class="logo-area">-->
+        <!--<img src="images/cdz.png" alt=""/>-->
+    <!--</div>-->
     <div class="bm-form">
         <div class="yy-ares">
             <img src="images/yy.png" alt=""/>
@@ -64,30 +63,15 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 20px;">
-                <div class="col-md-4 text-center">
+                <div class="col-md-4 text-center" ng-repeat="gift in data.gifts">
                     <div class="gift-img">
-                        <img src="images/apple.png" alt=""/>
+                        <img ng-src="{{gift.img}}" alt=""/>
                     </div>
                     <div>
-                        <input type="checkbox">
+                        <input type="checkbox" ng-model="gift.checked" ng-click="updateSelection($index,data.gifts)">
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <div class="gift-img">
-                        <img src="images/apple.png" alt=""/>
-                    </div>
-                    <div>
-                        <input type="checkbox">
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="gift-img">
-                        <img src="images/apple.png" alt=""/>
-                    </div>
-                    <div>
-                        <input type="checkbox">
-                    </div>
-                </div>
+
             </div>
             <div class="row" style="margin-top: 20px;">
                 <div class="col-md-12 text-center" style="color: white;font-size: 13px;">

@@ -9,6 +9,7 @@ config.$inject = [
     'RestangularProvider'
 ];
 function config($stateProvider,$urlRouterProvider,RestangularProvider) {
+    RestangularProvider.setBaseUrl("http://www.autohome.com.cn//ashx/AjaxIndexCarFind.ashx");
     $urlRouterProvider.otherwise('/index');
     $stateProvider
     .state('index', {
