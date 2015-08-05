@@ -9,7 +9,7 @@ config.$inject = [
     'RestangularProvider'
 ];
 function config($stateProvider,$urlRouterProvider,RestangularProvider) {
-    $urlRouterProvider.otherwise('/admin');
+    $urlRouterProvider.otherwise('/index');
     $stateProvider
     .state('index', {
         url: "/index",
