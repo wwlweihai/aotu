@@ -55,14 +55,13 @@ function index(Restangular,$scope) {
     $scope.form.series = $scope.data.seriesList[0].name;
     //$scope.form.gift = $scope.data.gifts[0].name;
     function activited(){
-
-        //var brandList = Restangular.one("");
-        //var brandParams = {
-        //    type:11
-        //};
-        //brandList.get(brandParams).then(function(result){
-        //    console.log(result);
-        //});
+        var brandList = Restangular.oneUrl("brand","http://apis.haoservice.com/lifeservice/car/GetSeries");
+        var brandParams = {
+            key:"43b013c398194bd3b8a1774d2fc4c9b5"
+        };
+        brandList.get(brandParams).then(function(result){
+            console.log(result);
+        });
         getGifts(function(results){
             for (var i = 0; i < results.length; i++) {
                 var object = results[i].attributes;
