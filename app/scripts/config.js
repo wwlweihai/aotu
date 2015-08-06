@@ -22,6 +22,5 @@ function config($stateProvider,$urlRouterProvider,RestangularProvider) {
         templateUrl: "module/admin/admin.html",
         controller:'admin'
     })
-
     ;
 };

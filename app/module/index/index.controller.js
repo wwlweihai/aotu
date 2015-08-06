@@ -10,20 +10,21 @@ function index(Restangular,$scope) {
     $scope.updateSelection = updateSelection;
     $scope.form = {};
     $scope.data = {};
-    $scope.data.gifts = [{
-        img:"images/apple.png",
-        name:"苹果",
-        checked:true
-    },{
-        img:"images/apple.png",
-        name:"苹果",
-        checked:false
-    },{
-        img:"images/apple.png",
-        name:"苹果",
-        checked:false
-    }
-    ];
+    $scope.data.gifts = [];
+    //$scope.data.gifts = [{
+    //    img:"images/apple.png",
+    //    name:"苹果",
+    //    checked:true
+    //},{
+    //    img:"images/apple.png",
+    //    name:"苹果",
+    //    checked:false
+    //},{
+    //    img:"images/apple.png",
+    //    name:"苹果",
+    //    checked:false
+    //}
+    //];
     $scope.data.seriesList = [{
         name:'宝马1系'
     }];
@@ -52,14 +53,22 @@ function index(Restangular,$scope) {
     $scope.form.brand = $scope.data.brandList[0].name;
     $scope.form.area = $scope.data.areaList[0].name;
     $scope.form.series = $scope.data.seriesList[0].name;
-    $scope.form.gift = $scope.data.gifts[0].name;
+    //$scope.form.gift = $scope.data.gifts[0].name;
     function activited(){
-        var brandList = Restangular.one("");
-        var brandParams = {
-            type:11
-        };
-        brandList.get(brandParams).then(function(result){
-            console.log(result);
+
+        //var brandList = Restangular.one("");
+        //var brandParams = {
+        //    type:11
+        //};
+        //brandList.get(brandParams).then(function(result){
+        //    console.log(result);
+        //});
+        getGifts(function(results){
+            for (var i = 0; i < results.length; i++) {
+                var object = results[i].attributes;
+                if(object.name != "")
+                    $scope.data.gifts.push(object);
+            }
         });
     };
     function signUp(){
@@ -77,6 +86,21 @@ function index(Restangular,$scope) {
         angular.forEach(entities, function(subscription, index) {
             if (position != index)
                 subscription.checked = false;
+        });
+    }
+    function getGifts(callback){
+        var Applicant = AV.Object.extend("gift");
+        var applicant = new Applicant();
+        var query = new AV.Query(Applicant);
+        query.find({
+            success: function(results) {
+                $scope.$apply(function(){
+                    callback(results);
+                });
+            },
+            error: function(object, error) {
+                $scope.err = true;
+            }
         });
     }
 };

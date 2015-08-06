@@ -7,28 +7,31 @@
     <!-- build:css(.) styles/modules.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
-    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
-    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.min.css">
     <!-- endbuild -->
     <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.5.7.js"></script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/restangular/dist/restangular.min.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="bower_components/plupload/js/plupload.full.min.js"></script>
+    <script src="bower_components/js-sdk/src/qiniu.js"></script>
     <!-- endbuild -->
-
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="module/index/index.css">
     <link rel="stylesheet" href="module/admin/admin.css">
     <!-- endbuild -->
-
     <!-- build:js scripts/main.js -->
+    <script src="scripts/upload.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/config.js"></script>
     <script src="module/index/index.controller.js"></script>
@@ -36,6 +39,12 @@
     <!-- endbuild -->
 </head>
 <body>
+    <!--<div id="container">-->
+        <!--<div class="btn btn-default btn-lg " id="pickfiles" >-->
+            <!--<i class="glyphicon glyphicon-plus"></i>-->
+            <!--<span>选择文件</span>-->
+        <!--</div>-->
+    <!--</div>-->
     <div ui-view="">
     </div>
 </body>

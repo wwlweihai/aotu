@@ -11,6 +11,12 @@ angular.module('app', [
 angular.module('app.core', [
     'restangular',
     'ui.router',
+    'ui.grid',
+    'ui.grid.edit',
+    'ui.grid.selection',
+    'ui.grid.exporter',
+    'ui.grid.resizeColumns',
+    'ui.grid.moveColumns',
     'ui.bootstrap'
     //,
     //监控scoll
