@@ -1,10 +1,11 @@
 angular.module('app.controllers')
 .controller('index',index);
 index.$inject = [
+    '$window',
     'Restangular',
     '$scope'
 ];
-function index(Restangular,$scope) {
+function index($window,Restangular,$scope) {
     $scope.signUp = signUp;
     $scope.updateSelection = updateSelection;
     $scope.form = {};
@@ -64,8 +65,10 @@ function index(Restangular,$scope) {
         applicant.save($scope.form, {
             success: function(object) {
                 alert("报名成功！");
+                $window.location.href = "http://chengdu.auto.163.com/";
             }
         });
+
     }
      function updateSelection(position, entities) {
          $scope.form.gift = entities[position].name;
