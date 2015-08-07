@@ -28,9 +28,11 @@
                         品牌：
                     </div>
                     <div class="item-input">
-                        <select ng-model="form.brand">
-                            <option ng-repeat="brand in data.brandList">{{brand.name}}</option>
-                        </select>
+                        <select ng-model="data.brand" ng-options="brand.N for brand in data.brandList"
+                                 ng-change="brandSelect(brand)"></select>
+                        <!--<select ng-model="form.brand" ng-change="brandSelect()">-->
+                            <!--<option ng-repeat="brand in data.brandList" >{{brand.N}}</option>-->
+                        <!--</select>-->
                     </div>
                 </div>
                 <div class="col-md-6 sub-item">
@@ -49,7 +51,7 @@
                     </div>
                     <div class="item-input">
                         <select ng-model="form.series" >
-                            <option ng-repeat="series in data.seriesList">{{series.name}}</option>
+                            <option ng-repeat="series in data.seriesList">{{series.N}}</option>
                         </select>
                     </div>
                 </div>
