@@ -210,7 +210,7 @@ module.exports = function (grunt) {
                         '<%= config.dist %>/**/*.js',
                         '<%= config.dist %>/styles/**.css',
                         '<%= config.dist %>/images/**.*',
-                        '<%= config.dist %>/styles/fonts/**.*',
+                        //'<%= config.dist %>/styles/fonts/**.*',
                         '<%= config.dist %>/*.{ico,png}'
                     ]
                 }
@@ -321,6 +321,7 @@ module.exports = function (grunt) {
                         'images/{,*/}*.*',
                         '**/*.html',
                         '**/*.json',
+                        'styles/{,*/}*.*',
                         'styles/fonts/{,*/}*.*'
                     ]
                 }, {
@@ -333,6 +334,12 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'bower_components/bootstrap',
+                    src: 'fonts/*.*',
+                    dest: '<%= config.dist %>'
+                },  {
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/angular-ui-grid',
                     src: 'fonts/*.*',
                     dest: '<%= config.dist %>'
                 }, {

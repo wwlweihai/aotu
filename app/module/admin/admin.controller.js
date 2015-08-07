@@ -1,10 +1,11 @@
 angular.module('app.controllers')
 .controller('admin',admin);
 admin.$inject = [
+    '$state',
     'uiGridConstants',
     '$scope'
 ];
-function admin(uiGridConstants,$scope) {
+function admin($state,uiGridConstants,$scope) {
     activited();
     $scope.data = {};
     $scope.readyUpload = false;
@@ -49,6 +50,7 @@ function admin(uiGridConstants,$scope) {
                     post.set('url','');
                     post.save();
                     alert("删除成功");
+                    $state.reload();
                 },
                 error: function(myObject, error) {
                     // 出错了.
@@ -90,6 +92,7 @@ function admin(uiGridConstants,$scope) {
                     peraddGift.name = "";
                     peraddGift.url = "";
                 });
+                $state.reload();
             }
         });
     }
