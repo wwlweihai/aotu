@@ -2,7 +2,7 @@
 
 bower install
 npm install
-
+dasdacxzasdascxzg
 补充依赖
 bower install https://github.com/daneden/animate.css.git
 

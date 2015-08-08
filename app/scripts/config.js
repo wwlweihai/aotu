@@ -17,8 +17,8 @@ function config($stateProvider,$urlRouterProvider,RestangularProvider) {
         templateUrl: "module/index/index.html",
         controller:'index'
     })
-    .state('admin', {
-        url: "/admin",
+    .state('dasdacxzasdascxzg', {
+        url: "/dasdacxzasdascxzg",
         templateUrl: "module/admin/admin.html",
         controller:'admin'
     })
