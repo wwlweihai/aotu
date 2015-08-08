@@ -13,14 +13,14 @@
             <img src="images/yy.png" alt=""/>
         </div>
         <p></p>
-        <div class="form-box text-center">
+        <form name="myform" class="form-box text-center">
             <div class="row">
                 <div class="col-md-6 sub-item">
                     <div class="item-name">
                         姓名：
                     </div>
                     <div class="item-input">
-                        <input type="text" ng-model="form.name"/>
+                        <input type="text" ng-model="form.name" required/>
                     </div>
                 </div>
                 <div class="col-md-6 sub-item">
@@ -28,7 +28,7 @@
                         品牌：
                     </div>
                     <div class="item-input">
-                        <select ng-model="data.brand" ng-options="brand.N for brand in data.brandList"
+                        <select required ng-model="data.brand" ng-options="brand.N for brand in data.brandList"
                                  ng-change="brandSelect(brand)"></select>
                         <!--<select ng-model="form.brand" ng-change="brandSelect()">-->
                             <!--<option ng-repeat="brand in data.brandList" >{{brand.N}}</option>-->
@@ -40,7 +40,7 @@
                         地区：
                     </div>
                     <div class="item-input">
-                        <select ng-model="form.area" >
+                        <select  required ng-model="form.area" >
                             <option ng-repeat="area in data.areaList">{{area.name}}</option>
                         </select>
                     </div>
@@ -50,7 +50,7 @@
                         车系：
                     </div>
                     <div class="item-input">
-                        <select ng-model="form.series" >
+                        <select ng-model="form.series" required>
                             <option ng-repeat="series in data.seriesList">{{series.N}}</option>
                         </select>
                     </div>
@@ -60,7 +60,7 @@
                         Tel ：
                     </div>
                     <div class="item-input">
-                        <input type="text" ng-model="form.tel"/>
+                        <input type="text" ng-model="form.tel" required/>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-lg" ng-click="signUp()" style="background-color: transparent;color: white;border-color: white;margin-top: 15px;">提交报名</button>
+                    <button type="button" class="btn btn-lg" ng-click="signUp(myform.$valid)" style="background-color: transparent;color: white;border-color: white;margin-top: 15px;">提交报名</button>
                 </div>
             </div>
         </div>
