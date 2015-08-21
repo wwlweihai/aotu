@@ -17,15 +17,10 @@ function config($stateProvider,$urlRouterProvider,RestangularProvider) {
         templateUrl: "module/index/index.html",
         controller:'index'
     })
-    .state('dasdacxzasdascxzg', {
-        url: "/dasdacxzasdascxzg",
+    .state('aotuadmin', {
+        url: "/aotuadmin",
         templateUrl: "module/admin/admin.html",
         controller:'admin'
-    })
-    .state('m', {
-        url: "/m",
-        templateUrl: "module/m/m.html",
-        controller:'index'
     })
     ;
 };
